@@ -20,6 +20,10 @@ export default {
     'element-ui/lib/theme-chalk/index.css'
   ],
 
+  loaders:{
+    sass:{}
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/element-ui',
