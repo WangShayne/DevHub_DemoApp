@@ -18,14 +18,18 @@
 
     <!-- Authenticated -->
     <div v-else>
-      You're logged in as {{ $auth.email }}.
+      <Authenticated />
       <el-button @click="$store.dispatch('auth/logout')">Logout</el-button>
     </div>
   </div>
 </template>
 
 <script>
+import Authenticated from "@/components/Authenticated.vue";
 export default {
+  components: {
+    Authenticated,
+  },
   data: () => ({
     loginForm: {
       email: "",

@@ -7,16 +7,20 @@
 
       <!-- Authenticated -->
       <div v-else>
-        <p>You're logged in as {{ $auth.email }}</p>
+        <!-- <p>You're logged in as {{ $auth.email }}</p> -->
         <button @click="$store.dispatch('auth/logout')" class="button--grey">Logout</button>
+        <Authenticated />
       </div>
   </div>
 
 </template>
 <script>
-
+import Authenticated from '@/components/Authenticated.vue'
 
 export default {
+  components:{
+    Authenticated
+  },
   created() {
   },
   destroyed() {

@@ -35,18 +35,24 @@
 
     <!-- Authenticated -->
     <div v-else>
-      You're logged in as {{ $auth.email }}.
+      <Authenticated />
       <el-button @click="$store.dispatch('auth/logout')">Logout</el-button>
     </div>
   </div>
 </template>
 
 <script>
+import Authenticated from "@/components/Authenticated.vue";
+
 const steps = {
   register: 'REGISTER',
   confirm: 'CONFIRM'
 }
+
 export default {
+  components: {
+    Authenticated,
+  },
   data: () => ({
     steps: { ...steps },
     step: steps.register,
