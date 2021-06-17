@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <p>You're logged in as {{ $auth.email }}</p>
-    </div>
+    <p>You're logged in as {{ $auth.email }}</p>
 </template>
 
 <script>

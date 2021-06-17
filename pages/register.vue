@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!$auth.isAuthenticated">
+    <div v-show="!$auth.isAuthenticated">
       <el-form
         v-if="step === steps.register"
         ref="registerForm"
@@ -34,7 +34,7 @@
     </div>
 
     <!-- Authenticated -->
-    <div v-else>
+    <div v-show="$auth.isAuthenticated">
       <Authenticated />
       <el-button @click="$store.dispatch('auth/logout')">Logout</el-button>
     </div>
