@@ -19,7 +19,7 @@ class AuthService {
   }
 }
 
-export default async ({ store }) => {
+export default async ({ store,}) => {
   const authService = new AuthService(store)
   Vue.prototype.$auth = authService
   Vue.$auth = authService

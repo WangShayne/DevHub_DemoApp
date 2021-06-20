@@ -21,6 +21,7 @@
           </ul>
         </template>
       </li>
+      <li class="menu-item"  @click="handleClick"><span class="submenu-title" v-html="$auth.isAuthenticated ? 'LogOut':'LogIn'"></span></li>
     </ul>
   </div>
 </template>
@@ -75,19 +76,7 @@ const Menus = [
     title: "Update Password",
     activeted: false,
     children: [],
-  },
-  {
-    id: "5",
-    title: "Log in",
-    activeted: false,
-    children: [],
-  },
-  {
-    id: "6",
-    title: "Log out",
-    activeted: false,
-    children: [],
-  },
+  }
 ];
 export default {
   data() {
@@ -95,6 +84,16 @@ export default {
       Menus,
     };
   },
+  methods: {
+      handleClick(){
+        
+          if(!this.$auth.isAuthenticated){
+              this.$router.push('/login')
+          }else{
+              this.$store.dispatch("auth/logout", null)
+          }
+      }
+  }
 };
 </script>
 
